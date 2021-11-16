@@ -67,7 +67,7 @@ export class FornecedorController {
 
     return await this.fornecedorService.create({
       ...fornecedor,
-      represante: {
+      Representante: {
         connect: {
           id: representanteId
         }
