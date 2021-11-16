@@ -1,0 +1,1 @@
+export { EstoqueBaixaEstoqueArgs } from "./EstoqueBaixaEstoqueArgs";

@@ -1,0 +1,142 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "../prisma/generated/type-graphql"
+
+}
+
+model Fornecedor {
+  id           Int     @id @unique @default(autoincrement())
+  razaoSocial  String
+  cnpj         String  @unique
+  email        String?
+  telefone     String?
+  nomeFantasia String?
+  site         String?
+  celular      String?
+  cep          String
+  logradouro   String
+  numero       String
+  complemento  String?
+  bairro       String
+  cidade       String
+  estado       String
+
+
+  Estoque         Estoque[]
+  Representante   Representante? @relation(fields: [representanteId], references: [id])
+  representanteId Int?
+}
+
+model Representante {
+  id         Int          @id @default(autoincrement())
+  nome       String
+  celular    String
+  Fornecedor Fornecedor[]
+}
+
+model CategoriaProduto {
+  id      Int       @id @default(autoincrement())
+  nome    String
+  Produto Produto[]
+}
+
+model Produto {
+  id                 Int              @id @default(autoincrement())
+  nome               String
+  descricao          String?
+  unidadeMedida      UnidadeMedida
+  categoria          CategoriaProduto @relation(fields: [categoriaProdutoId], references: [id])
+  categoriaProdutoId Int
+  Estoque            Estoque[]
+  Receita            Receita?         @relation(fields: [receitaId], references: [id])
+  receitaId          Int?
+}
+
+enum UnidadeMedida {
+  L
+  GR
+  Unidade
+}
+
+model Estoque {
+  id                Int      @id @default(autoincrement())
+  produto           Produto  @relation(fields: [produtoId], references: [id])
+  quantidadeProduto Int
+  produtoId         Int
+  dataRecebimento   DateTime @default(now())
+  dataVencimento    DateTime
+  marca             String
+  preco             Float
+
+  fornecedor   Fornecedor     @relation(fields: [fornecedorId], references: [id])
+  fornecedorId Int
+  BaixaEstoque BaixaEstoque[]
+}
+
+model BaixaEstoque {
+  id                Int              @id @default(autoincrement())
+  quantidadeProduto Int
+  tipo              TipoBaixaEstoque
+  foto              String?
+  motivo            String?
+
+  Estoque   Estoque @relation(fields: [estoqueId], references: [id])
+  estoqueId Int
+
+  Pedido   Pedido? @relation(fields: [pedidoId], references: [id])
+  pedidoId Int?
+}
+
+model Pedido {
+  id         Int      @id @default(autoincrement())
+  dataPedido DateTime @default(now())
+
+  BaixaEstoque BaixaEstoque[]
+  Usuario      Usuario        @relation(fields: [usuarioCpf], references: [cpf])
+  usuarioCpf   String
+}
+
+enum TipoBaixaEstoque {
+  PERDA
+  ROUBO
+  RETIRADA
+}
+
+model Usuario {
+  cpf            String      @id @unique
+  senha          String
+  nome           String
+  rg             String
+  celular        String
+  dataNascimento DateTime
+  tipoUsuario    TipoUsuario @relation(fields: [tipoUsuarioId], references: [id])
+  tipoUsuarioId  Int
+  Pedido         Pedido[]
+}
+
+model TipoUsuario {
+  id      Int       @id @default(autoincrement())
+  nome    String
+  Usuario Usuario[]
+}
+
+model Receita {
+  id        Int    @id @default(autoincrement())
+  nome      String
+  tipo      String
+  descricao String
+
+  produtos Produto[]
+}

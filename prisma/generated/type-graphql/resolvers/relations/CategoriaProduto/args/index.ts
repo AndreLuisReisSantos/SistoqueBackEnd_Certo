@@ -1,0 +1,1 @@
+export { CategoriaProdutoProdutoArgs } from "./CategoriaProdutoProdutoArgs";

@@ -1,0 +1,1 @@
+export { RepresentanteFornecedorArgs } from "./RepresentanteFornecedorArgs";

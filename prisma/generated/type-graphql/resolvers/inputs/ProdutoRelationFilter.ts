@@ -1,0 +1,20 @@
+import * as TypeGraphQL from "type-graphql";
+import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
+import { ProdutoWhereInput } from "../inputs/ProdutoWhereInput";
+
+@TypeGraphQL.InputType("ProdutoRelationFilter", {
+  isAbstract: true
+})
+export class ProdutoRelationFilter {
+  @TypeGraphQL.Field(_type => ProdutoWhereInput, {
+    nullable: true
+  })
+  is?: ProdutoWhereInput | undefined;
+
+  @TypeGraphQL.Field(_type => ProdutoWhereInput, {
+    nullable: true
+  })
+  isNot?: ProdutoWhereInput | undefined;
+}

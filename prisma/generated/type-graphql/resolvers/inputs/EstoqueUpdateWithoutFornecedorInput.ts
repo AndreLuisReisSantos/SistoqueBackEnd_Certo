@@ -1,0 +1,50 @@
+import * as TypeGraphQL from "type-graphql";
+import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
+import { BaixaEstoqueUpdateManyWithoutEstoqueInput } from "../inputs/BaixaEstoqueUpdateManyWithoutEstoqueInput";
+import { DateTimeFieldUpdateOperationsInput } from "../inputs/DateTimeFieldUpdateOperationsInput";
+import { FloatFieldUpdateOperationsInput } from "../inputs/FloatFieldUpdateOperationsInput";
+import { IntFieldUpdateOperationsInput } from "../inputs/IntFieldUpdateOperationsInput";
+import { ProdutoUpdateOneRequiredWithoutEstoqueInput } from "../inputs/ProdutoUpdateOneRequiredWithoutEstoqueInput";
+import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
+
+@TypeGraphQL.InputType("EstoqueUpdateWithoutFornecedorInput", {
+  isAbstract: true
+})
+export class EstoqueUpdateWithoutFornecedorInput {
+  @TypeGraphQL.Field(_type => IntFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  quantidadeProduto?: IntFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  dataRecebimento?: DateTimeFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  dataVencimento?: DateTimeFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  marca?: StringFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  preco?: FloatFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => ProdutoUpdateOneRequiredWithoutEstoqueInput, {
+    nullable: true
+  })
+  produto?: ProdutoUpdateOneRequiredWithoutEstoqueInput | undefined;
+
+  @TypeGraphQL.Field(_type => BaixaEstoqueUpdateManyWithoutEstoqueInput, {
+    nullable: true
+  })
+  BaixaEstoque?: BaixaEstoqueUpdateManyWithoutEstoqueInput | undefined;
+}

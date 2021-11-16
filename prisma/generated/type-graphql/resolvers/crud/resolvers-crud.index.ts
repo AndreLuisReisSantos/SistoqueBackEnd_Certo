@@ -1,0 +1,10 @@
+export { BaixaEstoqueCrudResolver } from "./BaixaEstoque/BaixaEstoqueCrudResolver";
+export { CategoriaProdutoCrudResolver } from "./CategoriaProduto/CategoriaProdutoCrudResolver";
+export { EstoqueCrudResolver } from "./Estoque/EstoqueCrudResolver";
+export { FornecedorCrudResolver } from "./Fornecedor/FornecedorCrudResolver";
+export { PedidoCrudResolver } from "./Pedido/PedidoCrudResolver";
+export { ProdutoCrudResolver } from "./Produto/ProdutoCrudResolver";
+export { ReceitaCrudResolver } from "./Receita/ReceitaCrudResolver";
+export { RepresentanteCrudResolver } from "./Representante/RepresentanteCrudResolver";
+export { TipoUsuarioCrudResolver } from "./TipoUsuario/TipoUsuarioCrudResolver";
+export { UsuarioCrudResolver } from "./Usuario/UsuarioCrudResolver";

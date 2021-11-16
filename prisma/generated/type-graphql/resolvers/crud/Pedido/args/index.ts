@@ -1,0 +1,12 @@
+export { AggregatePedidoArgs } from "./AggregatePedidoArgs";
+export { CreateManyPedidoArgs } from "./CreateManyPedidoArgs";
+export { CreatePedidoArgs } from "./CreatePedidoArgs";
+export { DeleteManyPedidoArgs } from "./DeleteManyPedidoArgs";
+export { DeletePedidoArgs } from "./DeletePedidoArgs";
+export { FindFirstPedidoArgs } from "./FindFirstPedidoArgs";
+export { FindManyPedidoArgs } from "./FindManyPedidoArgs";
+export { FindUniquePedidoArgs } from "./FindUniquePedidoArgs";
+export { GroupByPedidoArgs } from "./GroupByPedidoArgs";
+export { UpdateManyPedidoArgs } from "./UpdateManyPedidoArgs";
+export { UpdatePedidoArgs } from "./UpdatePedidoArgs";
+export { UpsertPedidoArgs } from "./UpsertPedidoArgs";

@@ -1,0 +1,1 @@
+export { ReceitaProdutosArgs } from "./ReceitaProdutosArgs";

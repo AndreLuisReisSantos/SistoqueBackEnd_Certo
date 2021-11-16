@@ -1,0 +1,12 @@
+export { AggregateFornecedorArgs } from "./AggregateFornecedorArgs";
+export { CreateFornecedorArgs } from "./CreateFornecedorArgs";
+export { CreateManyFornecedorArgs } from "./CreateManyFornecedorArgs";
+export { DeleteFornecedorArgs } from "./DeleteFornecedorArgs";
+export { DeleteManyFornecedorArgs } from "./DeleteManyFornecedorArgs";
+export { FindFirstFornecedorArgs } from "./FindFirstFornecedorArgs";
+export { FindManyFornecedorArgs } from "./FindManyFornecedorArgs";
+export { FindUniqueFornecedorArgs } from "./FindUniqueFornecedorArgs";
+export { GroupByFornecedorArgs } from "./GroupByFornecedorArgs";
+export { UpdateFornecedorArgs } from "./UpdateFornecedorArgs";
+export { UpdateManyFornecedorArgs } from "./UpdateManyFornecedorArgs";
+export { UpsertFornecedorArgs } from "./UpsertFornecedorArgs";

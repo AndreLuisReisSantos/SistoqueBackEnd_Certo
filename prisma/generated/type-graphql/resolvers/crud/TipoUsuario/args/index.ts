@@ -1,0 +1,12 @@
+export { AggregateTipoUsuarioArgs } from "./AggregateTipoUsuarioArgs";
+export { CreateManyTipoUsuarioArgs } from "./CreateManyTipoUsuarioArgs";
+export { CreateTipoUsuarioArgs } from "./CreateTipoUsuarioArgs";
+export { DeleteManyTipoUsuarioArgs } from "./DeleteManyTipoUsuarioArgs";
+export { DeleteTipoUsuarioArgs } from "./DeleteTipoUsuarioArgs";
+export { FindFirstTipoUsuarioArgs } from "./FindFirstTipoUsuarioArgs";
+export { FindManyTipoUsuarioArgs } from "./FindManyTipoUsuarioArgs";
+export { FindUniqueTipoUsuarioArgs } from "./FindUniqueTipoUsuarioArgs";
+export { GroupByTipoUsuarioArgs } from "./GroupByTipoUsuarioArgs";
+export { UpdateManyTipoUsuarioArgs } from "./UpdateManyTipoUsuarioArgs";
+export { UpdateTipoUsuarioArgs } from "./UpdateTipoUsuarioArgs";
+export { UpsertTipoUsuarioArgs } from "./UpsertTipoUsuarioArgs";

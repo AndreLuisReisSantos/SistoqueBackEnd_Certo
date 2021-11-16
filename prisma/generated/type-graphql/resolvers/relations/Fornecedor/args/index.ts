@@ -1,0 +1,1 @@
+export { FornecedorEstoqueArgs } from "./FornecedorEstoqueArgs";

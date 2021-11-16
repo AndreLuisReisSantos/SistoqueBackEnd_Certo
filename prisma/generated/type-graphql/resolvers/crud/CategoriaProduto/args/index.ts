@@ -1,0 +1,12 @@
+export { AggregateCategoriaProdutoArgs } from "./AggregateCategoriaProdutoArgs";
+export { CreateCategoriaProdutoArgs } from "./CreateCategoriaProdutoArgs";
+export { CreateManyCategoriaProdutoArgs } from "./CreateManyCategoriaProdutoArgs";
+export { DeleteCategoriaProdutoArgs } from "./DeleteCategoriaProdutoArgs";
+export { DeleteManyCategoriaProdutoArgs } from "./DeleteManyCategoriaProdutoArgs";
+export { FindFirstCategoriaProdutoArgs } from "./FindFirstCategoriaProdutoArgs";
+export { FindManyCategoriaProdutoArgs } from "./FindManyCategoriaProdutoArgs";
+export { FindUniqueCategoriaProdutoArgs } from "./FindUniqueCategoriaProdutoArgs";
+export { GroupByCategoriaProdutoArgs } from "./GroupByCategoriaProdutoArgs";
+export { UpdateCategoriaProdutoArgs } from "./UpdateCategoriaProdutoArgs";
+export { UpdateManyCategoriaProdutoArgs } from "./UpdateManyCategoriaProdutoArgs";
+export { UpsertCategoriaProdutoArgs } from "./UpsertCategoriaProdutoArgs";

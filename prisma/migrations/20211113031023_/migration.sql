@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Fornecedor" ALTER COLUMN "telefone" DROP NOT NULL,
+ALTER COLUMN "nomeFantasia" DROP NOT NULL,
+ALTER COLUMN "site" DROP NOT NULL;

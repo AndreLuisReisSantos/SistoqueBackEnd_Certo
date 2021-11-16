@@ -1,0 +1,12 @@
+export { AggregateBaixaEstoqueArgs } from "./AggregateBaixaEstoqueArgs";
+export { CreateBaixaEstoqueArgs } from "./CreateBaixaEstoqueArgs";
+export { CreateManyBaixaEstoqueArgs } from "./CreateManyBaixaEstoqueArgs";
+export { DeleteBaixaEstoqueArgs } from "./DeleteBaixaEstoqueArgs";
+export { DeleteManyBaixaEstoqueArgs } from "./DeleteManyBaixaEstoqueArgs";
+export { FindFirstBaixaEstoqueArgs } from "./FindFirstBaixaEstoqueArgs";
+export { FindManyBaixaEstoqueArgs } from "./FindManyBaixaEstoqueArgs";
+export { FindUniqueBaixaEstoqueArgs } from "./FindUniqueBaixaEstoqueArgs";
+export { GroupByBaixaEstoqueArgs } from "./GroupByBaixaEstoqueArgs";
+export { UpdateBaixaEstoqueArgs } from "./UpdateBaixaEstoqueArgs";
+export { UpdateManyBaixaEstoqueArgs } from "./UpdateManyBaixaEstoqueArgs";
+export { UpsertBaixaEstoqueArgs } from "./UpsertBaixaEstoqueArgs";

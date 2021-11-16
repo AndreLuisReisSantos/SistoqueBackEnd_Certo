@@ -1,0 +1,12 @@
+export { AggregateEstoqueArgs } from "./AggregateEstoqueArgs";
+export { CreateEstoqueArgs } from "./CreateEstoqueArgs";
+export { CreateManyEstoqueArgs } from "./CreateManyEstoqueArgs";
+export { DeleteEstoqueArgs } from "./DeleteEstoqueArgs";
+export { DeleteManyEstoqueArgs } from "./DeleteManyEstoqueArgs";
+export { FindFirstEstoqueArgs } from "./FindFirstEstoqueArgs";
+export { FindManyEstoqueArgs } from "./FindManyEstoqueArgs";
+export { FindUniqueEstoqueArgs } from "./FindUniqueEstoqueArgs";
+export { GroupByEstoqueArgs } from "./GroupByEstoqueArgs";
+export { UpdateEstoqueArgs } from "./UpdateEstoqueArgs";
+export { UpdateManyEstoqueArgs } from "./UpdateManyEstoqueArgs";
+export { UpsertEstoqueArgs } from "./UpsertEstoqueArgs";
