@@ -7,7 +7,6 @@ import { ProdutoCountAggregate } from "../outputs/ProdutoCountAggregate";
 import { ProdutoMaxAggregate } from "../outputs/ProdutoMaxAggregate";
 import { ProdutoMinAggregate } from "../outputs/ProdutoMinAggregate";
 import { ProdutoSumAggregate } from "../outputs/ProdutoSumAggregate";
-import { UnidadeMedida } from "../../enums/UnidadeMedida";
 
 @TypeGraphQL.ObjectType("ProdutoGroupBy", {
   isAbstract: true
@@ -28,15 +27,15 @@ export class ProdutoGroupBy {
   })
   descricao!: string | null;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  unidadeMedida!: "L" | "GR" | "Unidade";
+  unidadeMedida!: string;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
-    nullable: false
+    nullable: true
   })
-  categoriaProdutoId!: number;
+  categoriaProdutoId!: number | null;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: true

@@ -2,8 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CategoriaProdutoUpdateOneRequiredWithoutProdutoInput } from "../inputs/CategoriaProdutoUpdateOneRequiredWithoutProdutoInput";
-import { EnumUnidadeMedidaFieldUpdateOperationsInput } from "../inputs/EnumUnidadeMedidaFieldUpdateOperationsInput";
+import { CategoriaProdutoUpdateOneWithoutProdutoInput } from "../inputs/CategoriaProdutoUpdateOneWithoutProdutoInput";
 import { EstoqueUpdateManyWithoutProdutoInput } from "../inputs/EstoqueUpdateManyWithoutProdutoInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
@@ -22,15 +21,15 @@ export class ProdutoUpdateWithoutReceitaInput {
   })
   descricao?: NullableStringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => EnumUnidadeMedidaFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
     nullable: true
   })
-  unidadeMedida?: EnumUnidadeMedidaFieldUpdateOperationsInput | undefined;
+  unidadeMedida?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => CategoriaProdutoUpdateOneRequiredWithoutProdutoInput, {
+  @TypeGraphQL.Field(_type => CategoriaProdutoUpdateOneWithoutProdutoInput, {
     nullable: true
   })
-  categoria?: CategoriaProdutoUpdateOneRequiredWithoutProdutoInput | undefined;
+  categoria?: CategoriaProdutoUpdateOneWithoutProdutoInput | undefined;
 
   @TypeGraphQL.Field(_type => EstoqueUpdateManyWithoutProdutoInput, {
     nullable: true

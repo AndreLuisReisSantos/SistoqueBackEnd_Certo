@@ -4,7 +4,6 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CategoriaProdutoCreateNestedOneWithoutProdutoInput } from "../inputs/CategoriaProdutoCreateNestedOneWithoutProdutoInput";
 import { ReceitaCreateNestedOneWithoutProdutosInput } from "../inputs/ReceitaCreateNestedOneWithoutProdutosInput";
-import { UnidadeMedida } from "../../enums/UnidadeMedida";
 
 @TypeGraphQL.InputType("ProdutoCreateWithoutEstoqueInput", {
   isAbstract: true
@@ -20,15 +19,15 @@ export class ProdutoCreateWithoutEstoqueInput {
   })
   descricao?: string | undefined;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  unidadeMedida!: "L" | "GR" | "Unidade";
+  unidadeMedida!: string;
 
   @TypeGraphQL.Field(_type => CategoriaProdutoCreateNestedOneWithoutProdutoInput, {
-    nullable: false
+    nullable: true
   })
-  categoria!: CategoriaProdutoCreateNestedOneWithoutProdutoInput;
+  categoria?: CategoriaProdutoCreateNestedOneWithoutProdutoInput | undefined;
 
   @TypeGraphQL.Field(_type => ReceitaCreateNestedOneWithoutProdutosInput, {
     nullable: true

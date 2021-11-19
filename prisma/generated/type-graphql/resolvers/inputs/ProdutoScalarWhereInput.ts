@@ -2,7 +2,6 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { EnumUnidadeMedidaFilter } from "../inputs/EnumUnidadeMedidaFilter";
 import { IntFilter } from "../inputs/IntFilter";
 import { IntNullableFilter } from "../inputs/IntNullableFilter";
 import { StringFilter } from "../inputs/StringFilter";
@@ -42,15 +41,15 @@ export class ProdutoScalarWhereInput {
   })
   descricao?: StringNullableFilter | undefined;
 
-  @TypeGraphQL.Field(_type => EnumUnidadeMedidaFilter, {
+  @TypeGraphQL.Field(_type => StringFilter, {
     nullable: true
   })
-  unidadeMedida?: EnumUnidadeMedidaFilter | undefined;
+  unidadeMedida?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => IntNullableFilter, {
     nullable: true
   })
-  categoriaProdutoId?: IntFilter | undefined;
+  categoriaProdutoId?: IntNullableFilter | undefined;
 
   @TypeGraphQL.Field(_type => IntNullableFilter, {
     nullable: true

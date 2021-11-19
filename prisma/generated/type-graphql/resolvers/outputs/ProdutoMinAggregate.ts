@@ -2,7 +2,6 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { UnidadeMedida } from "../../enums/UnidadeMedida";
 
 @TypeGraphQL.ObjectType("ProdutoMinAggregate", {
   isAbstract: true
@@ -23,10 +22,10 @@ export class ProdutoMinAggregate {
   })
   descricao!: string | null;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: true
   })
-  unidadeMedida!: "L" | "GR" | "Unidade" | null;
+  unidadeMedida!: string | null;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: true

@@ -5,7 +5,6 @@ import { DecimalJSScalar } from "../scalars";
 import { CategoriaProduto } from "../models/CategoriaProduto";
 import { Estoque } from "../models/Estoque";
 import { Receita } from "../models/Receita";
-import { UnidadeMedida } from "../enums/UnidadeMedida";
 import { ProdutoCount } from "../resolvers/outputs/ProdutoCount";
 
 @TypeGraphQL.ObjectType("Produto", {
@@ -27,17 +26,17 @@ export class Produto {
   })
   descricao?: string | null;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  unidadeMedida!: "L" | "GR" | "Unidade";
+  unidadeMedida!: string;
 
-  categoria?: CategoriaProduto;
+  categoria?: CategoriaProduto | null;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
-    nullable: false
+    nullable: true
   })
-  categoriaProdutoId!: number;
+  categoriaProdutoId?: number | null;
 
   Estoque?: Estoque[];
 

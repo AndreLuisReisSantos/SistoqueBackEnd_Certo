@@ -5,7 +5,6 @@ import { DecimalJSScalar } from "../../scalars";
 import { CategoriaProdutoCreateNestedOneWithoutProdutoInput } from "../inputs/CategoriaProdutoCreateNestedOneWithoutProdutoInput";
 import { EstoqueCreateNestedManyWithoutProdutoInput } from "../inputs/EstoqueCreateNestedManyWithoutProdutoInput";
 import { ReceitaCreateNestedOneWithoutProdutosInput } from "../inputs/ReceitaCreateNestedOneWithoutProdutosInput";
-import { UnidadeMedida } from "../../enums/UnidadeMedida";
 
 @TypeGraphQL.InputType("ProdutoCreateInput", {
   isAbstract: true
@@ -21,15 +20,15 @@ export class ProdutoCreateInput {
   })
   descricao?: string | undefined;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  unidadeMedida!: "L" | "GR" | "Unidade";
+  unidadeMedida!: string;
 
   @TypeGraphQL.Field(_type => CategoriaProdutoCreateNestedOneWithoutProdutoInput, {
-    nullable: false
+    nullable: true
   })
-  categoria!: CategoriaProdutoCreateNestedOneWithoutProdutoInput;
+  categoria?: CategoriaProdutoCreateNestedOneWithoutProdutoInput | undefined;
 
   @TypeGraphQL.Field(_type => EstoqueCreateNestedManyWithoutProdutoInput, {
     nullable: true

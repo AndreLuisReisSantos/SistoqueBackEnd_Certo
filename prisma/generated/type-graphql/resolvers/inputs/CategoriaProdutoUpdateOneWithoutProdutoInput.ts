@@ -8,10 +8,10 @@ import { CategoriaProdutoUpdateWithoutProdutoInput } from "../inputs/CategoriaPr
 import { CategoriaProdutoUpsertWithoutProdutoInput } from "../inputs/CategoriaProdutoUpsertWithoutProdutoInput";
 import { CategoriaProdutoWhereUniqueInput } from "../inputs/CategoriaProdutoWhereUniqueInput";
 
-@TypeGraphQL.InputType("CategoriaProdutoUpdateOneRequiredWithoutProdutoInput", {
+@TypeGraphQL.InputType("CategoriaProdutoUpdateOneWithoutProdutoInput", {
   isAbstract: true
 })
-export class CategoriaProdutoUpdateOneRequiredWithoutProdutoInput {
+export class CategoriaProdutoUpdateOneWithoutProdutoInput {
   @TypeGraphQL.Field(_type => CategoriaProdutoCreateWithoutProdutoInput, {
     nullable: true
   })
@@ -31,6 +31,16 @@ export class CategoriaProdutoUpdateOneRequiredWithoutProdutoInput {
     nullable: true
   })
   connect?: CategoriaProdutoWhereUniqueInput | undefined;
+
+  @TypeGraphQL.Field(_type => Boolean, {
+    nullable: true
+  })
+  disconnect?: boolean | undefined;
+
+  @TypeGraphQL.Field(_type => Boolean, {
+    nullable: true
+  })
+  delete?: boolean | undefined;
 
   @TypeGraphQL.Field(_type => CategoriaProdutoUpdateWithoutProdutoInput, {
     nullable: true

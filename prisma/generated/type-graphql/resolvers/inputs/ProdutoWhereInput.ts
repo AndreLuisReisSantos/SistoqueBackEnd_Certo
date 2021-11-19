@@ -3,7 +3,6 @@ import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CategoriaProdutoRelationFilter } from "../inputs/CategoriaProdutoRelationFilter";
-import { EnumUnidadeMedidaFilter } from "../inputs/EnumUnidadeMedidaFilter";
 import { EstoqueListRelationFilter } from "../inputs/EstoqueListRelationFilter";
 import { IntFilter } from "../inputs/IntFilter";
 import { IntNullableFilter } from "../inputs/IntNullableFilter";
@@ -45,20 +44,20 @@ export class ProdutoWhereInput {
   })
   descricao?: StringNullableFilter | undefined;
 
-  @TypeGraphQL.Field(_type => EnumUnidadeMedidaFilter, {
+  @TypeGraphQL.Field(_type => StringFilter, {
     nullable: true
   })
-  unidadeMedida?: EnumUnidadeMedidaFilter | undefined;
+  unidadeMedida?: StringFilter | undefined;
 
   @TypeGraphQL.Field(_type => CategoriaProdutoRelationFilter, {
     nullable: true
   })
   categoria?: CategoriaProdutoRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => IntFilter, {
+  @TypeGraphQL.Field(_type => IntNullableFilter, {
     nullable: true
   })
-  categoriaProdutoId?: IntFilter | undefined;
+  categoriaProdutoId?: IntNullableFilter | undefined;
 
   @TypeGraphQL.Field(_type => EstoqueListRelationFilter, {
     nullable: true

@@ -11,11 +11,13 @@ import { ApolloServerPlugin } from 'apollo-server-plugin-base'
 
 import { Context, createContext } from './context'
 import { RepresentanteController } from '@controller/RepresentanteController'
+import { ProdutoController } from '@controller/ProdutoController'
+import { UsuarioController } from '@controller/UsuarioController'
 
 const bootstrap = async () => {
   const schema = await tq.buildSchema({
     resolvers: [
-      FornecedorController, RepresentanteController
+      FornecedorController, RepresentanteController, ProdutoController, UsuarioController
     ],
     scalarsMap: [
       {

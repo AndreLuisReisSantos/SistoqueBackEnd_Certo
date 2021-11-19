@@ -9,9 +9,9 @@ import { transformFields, getPrismaFromContext, transformCountFieldIntoSelectRel
 @TypeGraphQL.Resolver(_of => Produto)
 export class ProdutoRelationsResolver {
   @TypeGraphQL.FieldResolver(_type => CategoriaProduto, {
-    nullable: false
+    nullable: true
   })
-  async categoria(@TypeGraphQL.Root() produto: Produto, @TypeGraphQL.Ctx() ctx: any): Promise<CategoriaProduto> {
+  async categoria(@TypeGraphQL.Root() produto: Produto, @TypeGraphQL.Ctx() ctx: any): Promise<CategoriaProduto | null> {
     return getPrismaFromContext(ctx).produto.findUnique({
       where: {
         id: produto.id,

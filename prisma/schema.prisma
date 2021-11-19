@@ -53,14 +53,14 @@ model CategoriaProduto {
 }
 
 model Produto {
-  id                 Int              @id @default(autoincrement())
+  id                 Int               @id @default(autoincrement())
   nome               String
   descricao          String?
-  unidadeMedida      UnidadeMedida
-  categoria          CategoriaProduto @relation(fields: [categoriaProdutoId], references: [id])
-  categoriaProdutoId Int
+  unidadeMedida      String
+  categoria          CategoriaProduto? @relation(fields: [categoriaProdutoId], references: [id])
+  categoriaProdutoId Int?
   Estoque            Estoque[]
-  Receita            Receita?         @relation(fields: [receitaId], references: [id])
+  Receita            Receita?          @relation(fields: [receitaId], references: [id])
   receitaId          Int?
 }
 

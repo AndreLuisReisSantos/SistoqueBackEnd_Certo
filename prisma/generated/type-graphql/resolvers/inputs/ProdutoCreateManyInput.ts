@@ -2,7 +2,6 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { UnidadeMedida } from "../../enums/UnidadeMedida";
 
 @TypeGraphQL.InputType("ProdutoCreateManyInput", {
   isAbstract: true
@@ -23,15 +22,15 @@ export class ProdutoCreateManyInput {
   })
   descricao?: string | undefined;
 
-  @TypeGraphQL.Field(_type => UnidadeMedida, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  unidadeMedida!: "L" | "GR" | "Unidade";
+  unidadeMedida!: string;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
-    nullable: false
+    nullable: true
   })
-  categoriaProdutoId!: number;
+  categoriaProdutoId?: number | undefined;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: true

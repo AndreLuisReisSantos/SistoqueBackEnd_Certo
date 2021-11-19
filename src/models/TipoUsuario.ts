@@ -1,12 +1,10 @@
-import { Field, ID, ObjectType } from 'type-graphql';
+import { Field, ID, ObjectType } from 'type-graphql'
 
 @ObjectType()
-class TipoUsuario {
+export class TipoUsuario {
   @Field((_type) => ID)
   id: number
 
   @Field((_type) => String)
   nome: string
 }
-
-export default TipoUsuario;
