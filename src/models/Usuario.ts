@@ -30,6 +30,11 @@ export class Usuario {
   tipoUsuario: TipoUsuario
 }
 
+@ObjectType()
+export class Login {
+  @Field((type) => String!)
+  token: string
+}
 @InputType()
 export class CriarUsuario {
   @Field((type) => ID)
@@ -55,24 +60,24 @@ export class CriarUsuario {
 }
 @InputType()
 export class EditarUsuario {
-  @Field((type) => ID)
+  @Field((type) => ID, { nullable: true })
   cpf: string
 
-  @Field((type) => String)
+  @Field((type) => String, { nullable: true })
   senha: string
 
-  @Field((type) => String)
+  @Field((type) => String, { nullable: true })
   nome: string
 
-  @Field((type) => String)
+  @Field((type) => String, { nullable: true })
   rg: string
 
-  @Field((type) => String)
+  @Field((type) => String, { nullable: true })
   celular: string
 
-  @Field((type) => Date)
+  @Field((type) => Date, { nullable: true })
   dataNascimento: Date
 
-  @Field((type) => Int)
+  @Field((type) => Int, { nullable: true })
   tipoUsuario: number
 }

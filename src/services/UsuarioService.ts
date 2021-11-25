@@ -18,20 +18,22 @@ export class UsuarioService {
   }
 
   async getById (cpf: string) {
-    return await this.context.prisma.usuario.findUnique({
-      where: {
-        cpf
-      },
-      include: {
-        tipoUsuario: true
-      }
-    })
+    try {
+      const user = await this.context.prisma.usuario.findUnique({
+        where: {
+          cpf
+        },
+        include: {
+          tipoUsuario: true
+        }
+      })
+      return user
+    } catch (error) {
+      console.log({ error })
+    }
   }
 
   async create (usuario: Prisma.UsuarioCreateInput) {
-    if (await this.getById(usuario.cpf)) {
-      throw new ApolloError('Esse cpf já foi cadastrado', 'USER_FOUND')
-    }
     return await this.context.prisma.usuario.create({
       data: {
         ...usuario
@@ -54,9 +56,6 @@ export class UsuarioService {
   }
 
   async deletar (usuarioId: string) {
-    if (!await this.getById(usuarioId)) {
-      throw new ApolloError('Usuario não encontrado', 'USER_NOT_FOUND')
-    }
     return await this.context.prisma.usuario.delete({
       where: {
         cpf: usuarioId
