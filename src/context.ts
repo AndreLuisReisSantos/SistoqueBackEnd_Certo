@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client'
-import { ContainerInstance } from 'typedi'
 
 const prisma = new PrismaClient()
 
@@ -7,7 +6,7 @@ export interface TContext {
   requestId: string;
   prisma: PrismaClient
   req: any
-  container: ContainerInstance
+  container: any
 }
 
 export type Context = TContext

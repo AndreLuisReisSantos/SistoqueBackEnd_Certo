@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
+    "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn  --transpile-only --ignore-watch node_modules --no-notify src/main",
-    "start": "node ./build/main.js"
+    "start": "node ./dist/main.js"
   },
   "repository": {
     "type": "git",

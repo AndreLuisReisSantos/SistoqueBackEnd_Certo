@@ -34,7 +34,7 @@ const bootstrap = async () => {
         willSendResponse () {
           Container.reset(requestContext.context.requestId)
         }
-      }
+      } as unknown as Promise<void>
     }
   }
 
